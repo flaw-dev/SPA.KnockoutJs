@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="SPA.KnockoutJs.Service.StudentService" CodeBehind="StudentService.svc.cs" %>

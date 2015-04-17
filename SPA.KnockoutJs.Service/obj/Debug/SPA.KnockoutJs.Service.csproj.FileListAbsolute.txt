@@ -1,0 +1,10 @@
+E:\Learning Project\SPAKnockoutJs\SPA.AngulerJs.Service\bin\SPA.KnockoutJs.Service.dll.config
+E:\Learning Project\SPAKnockoutJs\SPA.AngulerJs.Service\bin\SPA.KnockoutJs.Service.dll
+E:\Learning Project\SPAKnockoutJs\SPA.AngulerJs.Service\bin\SPA.KnockoutJs.Service.pdb
+E:\Learning Project\SPAKnockoutJs\SPA.AngulerJs.Service\bin\EntityFramework.dll
+E:\Learning Project\SPAKnockoutJs\SPA.AngulerJs.Service\bin\EntityFramework.SqlServer.dll
+E:\Learning Project\SPAKnockoutJs\SPA.AngulerJs.Service\bin\EntityFramework.xml
+E:\Learning Project\SPAKnockoutJs\SPA.AngulerJs.Service\bin\EntityFramework.SqlServer.xml
+E:\Learning Project\SPAKnockoutJs\SPA.AngulerJs.Service\obj\Debug\SPA.KnockoutJs.Service.csprojResolveAssemblyReference.cache
+E:\Learning Project\SPAKnockoutJs\SPA.AngulerJs.Service\obj\Debug\SPA.KnockoutJs.Service.dll
+E:\Learning Project\SPAKnockoutJs\SPA.AngulerJs.Service\obj\Debug\SPA.KnockoutJs.Service.pdb

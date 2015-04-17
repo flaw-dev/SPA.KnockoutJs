@@ -1,0 +1,284 @@
+﻿@{
+    ViewBag.Title = "Student";
+}
+<div id="divAddNewStudent" data-bind="ifnot: Student()">
+    <h3 class="container">Add New Student</h3>
+    <div class="container">
+
+    </div>
+    <div class="container">
+        <div class="form-horizontal">
+            <div class="form-group">
+                <label class="col-sm-2 control-label" for="txtStudentName">Student Name</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" id="txtStudentName" data-bind="value: $root.Name" placeholder="Enter Student Name" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label" for="txtEmail">Email</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" id="txtEmail" data-bind="value: $root.Email" placeholder="Enter Email" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label" for="txtClass">Class</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" id="txtClass" data-bind="value: $root.Class" placeholder="Enter Class" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label" for="txtEnrollYear">Enroll Year</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" id="txtEnrollYear" data-bind="value: $root.EnrollYear" placeholder="Enter Enroll Year" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label" for="txtCity">City</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" id="txtCity" data-bind="value: $root.City" placeholder="Enter City" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label" for="txtCountry">Country</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" id="txtCountry" data-bind="value: $root.Country" placeholder="Enter Country" />
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="button" class="btn btn-primary" data-bind="click: $root.create">Add Student</button>
+                    <button type="button" class="btn btn-info" data-bind="click: $root.reset">Reset</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="divUpdateStudent" data-bind="if: Student">
+    <h3 class="container">Update Student Detail</h3>
+    <div class="container">
+        <div class="form-horizontal">
+            <div class="form-group">
+                <input type="hidden" data-bind="text: Student().StudentID, visible: false" />
+                <label class="col-sm-2 control-label" for="txtStudentName">Student Name</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" id="txtStudentName" data-bind="value: Student().Name" placeholder="Enter Student Name" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label" for="txtEmail">Email</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" data-bind="value: Student().Email" id="txtEmail" placeholder="Enter Email" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label" for="txtClass">Class</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" data-bind="value: Student().Class" id="txtClass" placeholder="Enter Class" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label" for="txtEnrollYear">Enroll Year</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" id="txtEnrollYear" data-bind="value: Student().EnrollYear" placeholder="Enter Enroll Year" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label" for="txtCity">City</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" id="txtCity" data-bind="value: Student().City" placeholder="Enter City" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label" for="txtCountry">Country</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" id="txtCountry" data-bind="value: Student().Country" placeholder="Enter Country" />
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-4">
+                    <button type="button" class="btn btn-primary" data-bind="click: $root.update">Save</button>
+                    <button type="button" class="btn btn-primary" data-bind="click: $root.cancel">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<h3 class="container">Show Student Detail</h3>
+<div class="container">
+    <hr />
+    <table id="studentDetail" class="table table-hover table-striped" data-bind=" visible: Students().length">
+        <thead>
+            <tr>
+                <th>Student Name</th>
+                <th>Email</th>
+                <th>Class</th>
+                <th>Enroll Year</th>
+                <th>City</th>
+                <th>Country</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody data-bind="foreach: Students">
+            <tr>
+                <td data-bind="text: Name"></td>
+                <td data-bind="text: Email"></td>
+                <td data-bind="text: Class"></td>
+                <td data-bind="text:EnrollYear"></td>
+                <td data-bind="text: City"></td>
+                <td data-bind="text:Country"></td>
+
+                <td>
+                    <button class="btn btn-success" data-bind="click: $root.edit">Edit</button>
+                    <button class="btn btn-danger" data-bind="click: $root.delete">Delete</button>
+
+                </td>
+
+            </tr>
+        </tbody>
+    </table>
+</div>
+<script type="text/javascript" src="~/Scripts/knockout-2.2.0.js"></script>
+<script type="text/javascript">
+
+
+    function StudentViewModel() {
+      
+        //Make the self as 'this' reference
+        var self = this;
+        //Declare observable which will be bind with UI
+        self.StudentID = ko.observable("");
+        self.Name = ko.observable("");
+        self.Email = ko.observable("");
+        self.Class = ko.observable("");
+        self.EnrollYear = ko.observable("");
+        self.City = ko.observable("");
+        self.Country = ko.observable("");
+
+        var Student = {
+            StudentID: self.StudentID,
+            Name: self.Name,
+            Email: self.Email,
+            Class: self.Class,
+            EnrollYear: self.EnrollYear,
+            City: self.City,
+            Country: self.Country
+        };
+
+        self.Student = ko.observable();
+        self.Students = ko.observableArray(); // Contains the list of Students
+
+        // Initialize the view-model
+        $.ajax({
+            url: '@Url.Action("GetAllStudent", "Home")',
+            cache: false,
+            type: 'GET',
+            contentType: 'application/json; charset=utf-8',
+            data: {},
+            success: function (data) {
+                if (data.outcome == true)
+                    self.Students(data.resultData); //Put the response in ObservableArray
+
+            }
+        });
+
+
+        //Add New Item
+        self.create = function () {
+            if (Student.Name() != "" && Student.Email() != "" && Student.Class() && Student.EnrollYear() && Student.Country() && Student.City() != "") {
+                $.ajax({
+                    url: '@Url.Action("SaveStudentDetail", "Home")',
+                    type: 'POST',
+                    contentType: 'application/json; charset=utf-8',
+                    data: ko.toJSON(Student) ,
+                    success: function (data) {
+                        self.Students.push(data.resultData);
+                        self.Name("");
+                        self.Email("");
+                        self.Class("");
+                        self.EnrollYear("");
+                        self.City("");
+                        self.Country("");
+
+                    }
+                }).fail(
+                function (xhr, textStatus, err) {
+                    alert(err);
+                });
+
+            }
+            else {
+                alert('Please Enter All the Values !!');
+            }
+
+        }
+        // Delete Student details
+        self.delete = function (Student) {
+            if (confirm('Are you sure to Delete "' + Student.Name + '" student ??')) {
+                var id = Student.Id;
+
+                $.ajax({
+                    url: '@Url.Action("DeleteStudent", "Student")',
+                    cache: false,
+                    type: 'POST',
+                    contentType: 'application/json; charset=utf-8',
+                    data: ko.toJSON(id),
+                    success: function (data) {
+                        self.Students.remove(Student);
+
+                    }
+                }).fail(
+                function (xhr, textStatus, err) {
+                    self.status(err);
+                });
+            }
+        }
+
+        // Edit Student details
+        self.edit = function (Student) {
+            self.Student(Student);
+
+        }
+
+        // Update Student details
+        self.update = function () {
+            var Student = self.Student();
+
+            $.ajax({
+                url: '@Url.Action("UpdateStudentDetail", "Home")',
+                cache: false,
+                type: 'POST',
+                contentType: 'application/json; charset=utf-8',
+                data: ko.toJSON(Student),
+                success: function (data) {
+                    self.Students.removeAll();
+                    self.Students(data.resultData); //Put the response in ObservableArray
+                    self.Student(null);
+                    alert("Record Updated Successfully");
+                }
+            })
+            .fail(
+            function (xhr, textStatus, err) {
+                alert(err);
+            });
+        }
+
+        // Reset Student details
+        self.reset = function () {
+            self.Name("");
+            self.Email("");
+            self.Class("");
+            self.EnrollYear("");
+            self.City("");
+            self.Coountry("");
+        }
+
+        // Cancel Student details
+        self.cancel = function () {
+            self.Student(null);
+
+        }
+    }
+    var viewModel = new StudentViewModel();
+    ko.applyBindings(viewModel);
+
+</script>
